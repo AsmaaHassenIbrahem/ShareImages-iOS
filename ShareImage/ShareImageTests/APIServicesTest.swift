@@ -7,9 +7,9 @@
 //
 
 import XCTest
-@testable import ShareImage
-
 import Moya
+
+@testable import ShareImage
 
 class APIServicesTest: XCTestCase {
     
@@ -35,7 +35,7 @@ class APIServicesTest: XCTestCase {
     override func tearDown() {
     }
     
-    func apiRequests() {
+    func testApiRequests() {
         
         let customEndpointClosure = { (target: APIServices) -> Endpoint in
             _ = MoyaProvider.defaultEndpointMapping(for: target)
