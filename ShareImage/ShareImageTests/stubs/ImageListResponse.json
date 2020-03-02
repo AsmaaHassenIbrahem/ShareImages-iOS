@@ -1,0 +1,24 @@
+{
+    "IsSuccessful": true,
+    "Message": "OK",
+    "Result": [
+        {
+            "Picture": "http://api.potatohutkw.com/Content/fcebcf7c-182d-42fa-b6a0-3ed5cb4c8fc0.png",
+            "UserID": 1,
+            "Privacy": true,
+            "PostOwner": "assma"
+        },
+        {
+            "Picture": "http://api.potatohutkw.com/Content/20771386-c474-4ccb-bd61-7237a4553f6f.png",
+            "UserID": 20,
+            "Privacy": true,
+            "PostOwner": "asmaa"
+        },
+        {
+            "Picture": "http://api.potatohutkw.com/Content/9caeddec-1cd7-4f43-a692-ede13fef885e.png",
+            "UserID": 21,
+            "Privacy": true,
+            "PostOwner": "soma"
+        }
+    ]
+}
