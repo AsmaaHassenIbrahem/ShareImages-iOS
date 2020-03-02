@@ -11,7 +11,6 @@
 		7216F054240C5CDF00359A81 /* BaseResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 7216F053240C5CDF00359A81 /* BaseResponse.json */; };
 		7216F057240C5D3100359A81 /* LoginResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 7216F056240C5D3100359A81 /* LoginResponse.json */; };
 		7216F059240C7AE600359A81 /* APIServicesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7216F058240C7AE600359A81 /* APIServicesTest.swift */; };
-		72242A1E240C98A4003BC5F1 /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72242A1D240C98A4003BC5F1 /* ViewModelTests.swift */; };
 		72251146DE349D3923A15CAD /* Pods_ShareImageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DA6E2E5A6C9808F7CA1F052 /* Pods_ShareImageTests.framework */; };
 		729F91C12409710200FED697 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729F91C02409710200FED697 /* AppDelegate.swift */; };
 		729F91C32409710200FED697 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729F91C22409710200FED697 /* SceneDelegate.swift */; };
@@ -57,7 +56,6 @@
 		7216F053240C5CDF00359A81 /* BaseResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BaseResponse.json; sourceTree = "<group>"; };
 		7216F056240C5D3100359A81 /* LoginResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LoginResponse.json; sourceTree = "<group>"; };
 		7216F058240C7AE600359A81 /* APIServicesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServicesTest.swift; sourceTree = "<group>"; };
-		72242A1D240C98A4003BC5F1 /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
 		729F91BD2409710200FED697 /* ShareImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		729F91C02409710200FED697 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		729F91C22409710200FED697 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -195,7 +193,6 @@
 				729F91D72409710300FED697 /* ShareImageTests.swift */,
 				729F91D92409710300FED697 /* Info.plist */,
 				7216F058240C7AE600359A81 /* APIServicesTest.swift */,
-				72242A1D240C98A4003BC5F1 /* ViewModelTests.swift */,
 			);
 			path = ShareImageTests;
 			sourceTree = "<group>";
@@ -551,7 +548,6 @@
 			files = (
 				729F91D82409710300FED697 /* ShareImageTests.swift in Sources */,
 				7216F059240C7AE600359A81 /* APIServicesTest.swift in Sources */,
-				72242A1E240C98A4003BC5F1 /* ViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

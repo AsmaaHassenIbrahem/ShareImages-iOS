@@ -15,10 +15,12 @@ struct ImageListView: View {
     @State private var viewModel = ViewModel()
     @State var userIdValue : Int = 0
     @State private var  images = [ImageRow]()
+    @State private var showIndecator = false
+    
     
     var body: some View {
         
-        List(images,id: \.picture) { item  in
+        List(self.images,id: \.picture) { item  in
             if self.images.count > 0 {
                 HStack(alignment: .center, spacing: 20) {
                     Group(){
@@ -33,7 +35,7 @@ struct ImageListView: View {
     }
     
     func loadData() {
-        viewModel.getImagesVal(userId: userIdValue, completion:{(response, Error) in
+        viewModel.getImagesVal(userId: userIdValue, completion:{(response) in
             self.images = response.result
         })
     }

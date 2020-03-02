@@ -13,45 +13,50 @@ struct LoginView: View {
     @State var selection: Int? = nil
     @State var userIdValue : Int = 0
     @State var viewModel = ViewModel()
+    @State private var showIndecator = false
+    
     
     var body: some View {
-        NavigationView {
-            ScrollView{
-                VStack(alignment: .center, spacing: 30) {
-                    TextField("Enter device name", text: $name).padding().border(Color.gray, width: 2)
-                    Text("Hello, \(name)!")
+        LoadingView(isShowing: .constant(showIndecator)) {
+            NavigationView {
+                ScrollView{
+                    VStack(alignment: .center, spacing: 30) {
+                        TextField("Enter device name", text: self.$name).padding().border(Color.gray, width: 2)
+                        Text("Hello, \(self.name)!")
+                        
+                        if self.name.count > 4{
+                            NavigationLink(destination: ShareView(userIdValue: self.userIdValue), tag: 1, selection: self.$selection) {
+                                
+                                
+                                Button(action:{
+                                    self.showIndecator = true
+                                    self.viewModel.login(username: self.name, completion :{ userId, error in
+                                        if let userId = userId {
+                                            print(userId)
+                                            self.selection = 1
+                                            self.userIdValue = userId
+                                            self.showIndecator = false
+                                        }
+                                    })
+                                }){
+                                    Group{
+                                        Text("Login")
+                                            .fontWeight(.semibold)
+                                            .font(.title)
+                                    } .padding()
+                                        .foregroundColor(.white)
+                                        .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .leading, endPoint: .trailing))
+                                        .cornerRadius(40)
+                                }
+                            }.navigationBarTitle("Login").environment(\.horizontalSizeClass, .compact)
+                        }
+                    }.padding()
                     
-                    if name.count > 4{
-                        NavigationLink(destination: ShareView(userIdValue: self.userIdValue), tag: 1, selection: $selection) {
-                            
-                            
-                            Button(action:{
-                                // action
-                                self.viewModel.login(username: self.name, completion :{ userId, error in
-                                    if let userId = userId {
-                                        print(userId)
-                                        self.selection = 1
-                                        self.userIdValue = userId
-                                        
-                                    }
-                                })
-                            }){
-                                Group{
-                                    Text("Login")
-                                        .fontWeight(.semibold)
-                                        .font(.title)
-                                } .padding()
-                                    .foregroundColor(.white)
-                                    .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .leading, endPoint: .trailing))
-                                    .cornerRadius(40)
-                            }
-                        }.navigationBarTitle("Login").environment(\.horizontalSizeClass, .compact)
-                    }
-                }.padding()
-                
-            }
-        }.phoneOnlyStackNavigationView()
+                }
+            }.phoneOnlyStackNavigationView()
+        }
     }
+    
 }
 
 struct LoginView_Previews: PreviewProvider {

@@ -60,7 +60,7 @@ class ViewModel: NSObject {
         })
     }
     
-    func getImagesVal(userId :Int , completion: @escaping(ImageListResponse, Error?)->()){
+    func getImagesVal(userId :Int , completion: @escaping(ImageListResponse)->()){
         
         apiProvider.request(.readData(userId: userId), completion: {(Result) in
             switch Result {
@@ -68,7 +68,7 @@ class ViewModel: NSObject {
                 do {
                     let images = try response.map(ImageListResponse.self)
                     print(images.result[0].picture)
-                    completion(images , nil)
+                    completion(images)
                 }
                 catch let error {
                     print(error)
